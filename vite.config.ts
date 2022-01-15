@@ -14,7 +14,7 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
-
+import vueJsx from '@vitejs/plugin-vue-jsx'
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
 export default defineConfig({
@@ -24,13 +24,16 @@ export default defineConfig({
     },
   },
   plugins: [
+    vueJsx({
+      // options are passed on to @vue/babel-plugin-jsx
+    }),
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
-      extensions: ['vue', 'md'],
+      extensions: ['vue', 'md', 'tsx'],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
