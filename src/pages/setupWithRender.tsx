@@ -8,6 +8,7 @@ export default defineComponent({
   },
   render() {
     const y = ref('Hello Render')
+    // 引用 setup 方法内定义的变量使用 this.变量名, 引用 render 方法内定义的变量使用 变量名.value
     return <><Mouse/>
       <div>{this.x}</div>
       <div>{y.value}</div>
