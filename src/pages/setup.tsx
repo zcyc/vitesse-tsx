@@ -5,7 +5,8 @@ export default defineComponent({
     const x = ref('Hello Setup')
     return () => <>
       <Mouse/>
-      <div>{x.value}</div>
+      <div class="animate-bounce">{x.value}</div>
+      <div class="rounded bg-green-800">rounded</div>
     </>
   },
 })
